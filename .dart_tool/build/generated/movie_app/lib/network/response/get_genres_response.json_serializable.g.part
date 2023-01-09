@@ -1,0 +1,15 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+GetGenresResponse _$GetGenresResponseFromJson(Map<String, dynamic> json) =>
+    GetGenresResponse(
+      (json['genres'] as List<dynamic>?)
+          ?.map((e) => GenresVO.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$GetGenresResponseToJson(GetGenresResponse instance) =>
+    <String, dynamic>{
+      'genres': instance.genres,
+    };
